@@ -1,28 +1,32 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Units from './components/Units';
+import Facilities from './components/Facilities';
+import LocationContact from './components/LocationContact';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Footer() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
+    <footer className="bg-[#121212] py-8">
+      <div className="max-w-7xl mx-auto px-6 rounded-2xl border border-[#A7F3D0]/30 bg-white/5 backdrop-blur-xl text-center">
+        <p className="py-4 text-[#F5F5F5]/90" style={{ fontFamily: 'SF Pro Text, -apple-system, system-ui, Inter, sans-serif' }}>
+          © 2025 Jakarta Sky Liquida - Urban Future Living
         </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen bg-[#121212]">
+      <Navbar />
+      <main>
+        <Hero />
+        <Units />
+        <Facilities />
+        <LocationContact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
